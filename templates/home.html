@@ -1,28 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Oscar Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Oscar Project</title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 </head>
 <body>
+    <ul>
+        <img src="{{ url_for('static', filename='Images/TheOscarProjectLogo.png') }}" class= "logo" alt="The Oscar Project" width="180" height="50">
+        <li><a class="active" href="https://oscarproj1.herokuapp.com/">Home</a></li>
+        <li><a href="https://oscarproj1.herokuapp.com/about">About</a></li>
+        <li><a href="https://oscarproj1.herokuapp.com/apiHelp">API</a></li>
+    </ul>
 
-<h1>Base Skeleton Code</h1>
-<form action="https://oscarproj1.herokuapp.com/" method="POST">
-	<h2>Oscar Award</h2>
-	
-	<input type="radio" id="rad1" name="rad" value="rad1" checked>
-	<label for="radio1">rad1</label><br>
-	<input type="radio" id="rad2" name="rad" value="rad2">
-	<label for="radio1">rad2</label><br>
-	<input type="radio" id="rad3" name="rad" value="rad3">
-	<label for="radio1">rad3</label><br>
-	
-	{% if selection: %}
-	<h3>You selected {{ selection }}</h3>
-	{% endif %}
-	
-	<input type="submit" value="Submit">
-</form>
+	<div class="background">
+		<img src="{{ url_for('static', filename='Images/Background3Top.jpg') }}" alt="Background" width="1200" height="430">
+        <div id="btn">
+            <div class="move-filter">
+				<div class="search">
+					<div class="field">
+					<form action="https://oscarproj1.herokuapp.com/display" method="GET">
+				
+					<label for="mname">Movie Name:</label><br>
+					<input type="text" id="mname" name="mname"><br>
+					
+					<label for="category">Category:</label><br>
+					<input type="text" id="category" name="category"><br>
+					
+					<label for="year">Year:</label><br>
+					<input type="text" id="year" name="year"><br>
+					
+					<label for="winner">Winner:</label><br>
+					<input type="text" id="winner" name="winner"><br>
+				  
+					<input type="submit" value="Submit">
+					</form>
+					</div>
+					
 
+				<div>
+            </div>
+        </div>
+        <div class="bottom_image">
+            <img src="{{ url_for('static', filename='Images/Background3Bottom.jpg') }}" alt="Background" width="1200" height="430">
+        </div>
+    </div>
+	
+    
+    
 
 </body>
 </html>
